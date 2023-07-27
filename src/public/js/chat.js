@@ -49,4 +49,4 @@ socket.on('chat:newConnection',data=>{
         title:`${data} se unió al chat`,
         icon:"success"
     })
-})
+});

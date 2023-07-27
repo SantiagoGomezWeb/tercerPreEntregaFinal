@@ -20,5 +20,4 @@ export default class TicketService {
     updateTicketService = (tid) => {
         return this.dao.updateTicket(tid)
     }
-
 }

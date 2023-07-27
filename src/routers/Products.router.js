@@ -2,7 +2,6 @@ import { passportCall } from '../middleware/auth.js';
 import BaseRouter from './Router.js';
 import productsController from '../controllers/products.controller.js';
 
-
 export default class ProductsRouter extends BaseRouter {
     //http://localhost:8080/api/products?limit=2
     init() {
@@ -21,8 +20,4 @@ export default class ProductsRouter extends BaseRouter {
         this.delete('/:pid', ['ADMIN'], passportCall('jwt', {strategyType: 'jwt'}), productsController.deleteProduct)
     }
 
-}
-
-
-
-// export default this
+};

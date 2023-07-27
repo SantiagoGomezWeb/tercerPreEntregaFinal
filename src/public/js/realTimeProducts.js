@@ -1,7 +1,6 @@
-const socket = io()
+const socket = io();
 const products = document.getElementById('products');
-const formulario = document.getElementById('form')
-
+const formulario = document.getElementById('form');
 
 const btnEliminar = () => {
     const botones = document.getElementsByClassName('btn-danger')
@@ -122,12 +121,4 @@ formulario.addEventListener('submit', (event) => {
     formulario.reset()
 })
 
-
-productsByServer()
-
-
-
-
-
-
-
+productsByServer();

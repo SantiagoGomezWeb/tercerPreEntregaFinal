@@ -1,9 +1,6 @@
-
-
-const productsStock = document.getElementById('productsStock')
-const productsInFront = document.getElementById('productsInFront')
-const formUpdate = document.getElementById('formUpdate')
-
+const productsStock = document.getElementById('productsStock');
+const productsInFront = document.getElementById('productsInFront');
+const formUpdate = document.getElementById('formUpdate');
 
 
 document.querySelectorAll('.update-product').forEach(button => {

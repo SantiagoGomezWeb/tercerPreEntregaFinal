@@ -3,9 +3,7 @@ const btnCartFinal = document.getElementById('cartFinal');
 const modalBody = document.getElementById('modalBody');
 const modalFooter = document.getElementById('modalFooter');
 
-
 const arrayProducts = Array.from(products);
-
 
 const productsInCart = () => {
     fetch('/products/inCart')
@@ -122,8 +120,4 @@ btnCartFinal.addEventListener('click', () => {
 
 })
 
-
-productsInCart()
-
-
-
+productsInCart();
