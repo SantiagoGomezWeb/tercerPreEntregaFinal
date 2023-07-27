@@ -1,6 +1,6 @@
 import { productService, cartService, ticketsService } from "../services/index.js";
 
-const cart = []
+const cart = [];
 
 const getIndexView = async (req, res) => {
     try {
@@ -72,7 +72,6 @@ const getProductsView = async (req, res) => {
 
         }
 
-        // Devuelve un array con las categorias disponibles y compara con la query "category"
         const categories = await productService.categoriesService()
 
         const result = categories.some(categ => categ === category)
@@ -270,4 +269,4 @@ export default {
     getAllTicketView,
     getAdminView,
     forbiddenView
-}
+};

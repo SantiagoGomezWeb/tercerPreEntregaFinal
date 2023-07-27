@@ -51,7 +51,6 @@ const getProducts = async (req, res) => {
 
         }
 
-        // Devuelve un array con las categorias disponibles y compara con la query "category"
         const categories = await productService.categoriesService()
 
         const result = categories.some(categ => categ === category)
@@ -79,13 +78,10 @@ const getProductId = async (req, res) => {
     try {
         const { pid } = req.params
 
-        // Se devuelve el resultado
         const result = await productService.getProductByIdService(pid)
 
-        // En caso de que traiga por error en el ID de product
         if (result === null || typeof (result) === 'string') return res.status(404).send({ status: 'error', message: `The ID product: ${pid} not found` })
 
-        // Resultado
         return res.status(200).send(result);
 
     } catch (err) {
@@ -179,4 +175,4 @@ export default {
     postProduct,
     putProduct,
     deleteProduct
-}
+};

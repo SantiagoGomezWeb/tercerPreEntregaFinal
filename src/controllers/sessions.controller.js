@@ -81,4 +81,4 @@ export default {
     registerPost,
     postLogOut,
     currentSession,
-}
+};

@@ -12,7 +12,7 @@ import config from './config.js';
 
 import UserDTO from '../DTOs/user/userDTO.js';
 
-const localStrategy = local.Strategy
+const localStrategy = local.Strategy;
 
 
 export const initializePassport = () => {
@@ -22,7 +22,6 @@ export const initializePassport = () => {
 
             try {
                 const user = await usersService.getUsersByEmail(emailUser)
-                // let user = await userManager.getUsersByEmail(username);
                 if (user) {
 
                     return done(null, false, { message: 'User already exists' });
@@ -35,8 +34,6 @@ export const initializePassport = () => {
                     age,
                     password: createHash(password),
                 })
-
-                
 
                 const checkUser = Object.values(newUser).every(property => property)
                 if (!checkUser) return res.send({ status: 'error', message: 'User Incomplete' })
@@ -65,7 +62,6 @@ export const initializePassport = () => {
                                 last_name: 'coder',
                                 email: 'adminCoder@coder.com',
                                 age: 100,
-
                                 role: 'ADMIN'
                             }
                         )
@@ -73,7 +69,6 @@ export const initializePassport = () => {
 
                     }
                     const userDB = await usersService.validateUser(email)
-
 
                     if (!userDB) return done(null, false, { status: 'error', message: 'User not found, please try again or password not valid' })
 
@@ -94,11 +89,8 @@ export const initializePassport = () => {
                         return newUserCart;
                     }
                     
-                    
                     let cart = existsCart[0] ? existsCart[0]._id : await handleCart();
                     
-                    
-
                     const user = new UserDTO(
                         {
                             id: userDB._id,
@@ -108,9 +100,6 @@ export const initializePassport = () => {
                             role: userDB.role,
                             cart
                         })
-
-
-                    
 
                     return done(null, user, { status: 'success', message: 'User log' })
                 } catch (error) {
@@ -171,7 +160,7 @@ export const initializePassport = () => {
     passport.use('jwt', new Strategy(
         {
             jwtFromRequest: ExtractJwt.fromExtractors([cookieExtractor]),
-            secretOrKey: config.privateKey, // CAMBIAR LUEGO
+            secretOrKey: config.privateKey, 
 
         }, async (payload, done) => {
             try {

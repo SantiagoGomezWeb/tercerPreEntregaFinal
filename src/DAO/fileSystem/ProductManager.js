@@ -8,9 +8,6 @@ class ProductManager {
 
     };
 
-    // Private methods
-
-
     #validateCodeProduct = async (obj) => {
 
         let validateCode = this.products.find(property => property.code === obj.code);
@@ -46,8 +43,6 @@ class ProductManager {
             }
         }
     };
-
-    // Methods for Fyle System
 
     #saveProductsFS = async (id) => {
         try {
@@ -146,8 +141,6 @@ class ProductManager {
 
     }
 
-    // Public methods
-
     addProduct = async ({ title, description, price, code, stock, status, category, thumbnails }) => {
         try {
             this.products = await this.getProducts()
@@ -195,4 +188,3 @@ class ProductManager {
 };
 
 export default ProductManager;
-

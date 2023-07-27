@@ -21,11 +21,8 @@ const getCartId = async (req, res) => {
 
         const result = await cartService.getCartByIdService(cid)
         
-        // Si el resultado del GET tiene la propiedad 'CastError' devuelve un error
         if (result === null || typeof (result) === 'string') return res.status(404).send({ status: 'error', message: 'ID not found' });
 
-
-        // Resultado
         return res.sendSuccessWithPayload(result);
     } catch (error) {
         return res.sendInternalError(error)
@@ -42,7 +39,6 @@ const postCart = async (req, res) => {
 
         if (!Array.isArray(products)) return res.sendNotFound({ status: 'error', message: 'TypeError' });
 
-        // Corroborar si todos los ID de los productos existen
         const results = await Promise.all(products.map(async (product) => {
             const checkId = await productService.getProductByIdService(product._id);
             if (checkId === null || typeof (checkId) === 'string') return `The ID product: ${product._id} not found`
@@ -249,4 +245,4 @@ export default {
     deleteProductInCart,
     deleteCart,
     purchaseCart
-}
+};
