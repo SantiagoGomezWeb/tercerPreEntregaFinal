@@ -56,3 +56,21 @@ app.listen(PORT, () => {
         console.log(err);
     }
 });
+
+// ENDPOINTS
+// "name": "GET PRODUCTS"
+// "name": "GET PRODUCT By ID"
+// "name": "POST PRODUCT"
+// "name": "PUT PRODUCT"
+// "name": "DELETE PRODUCT"
+// "name": "GET CARTS"
+// "name": "GET CARTS by ID"
+// "name": "POST CARTS"
+// "name": "POST PRODUCT IN CART"
+// "name": "DELETE PRODUCT FROM CART"
+// "name": "UPDATE PRODUCTS IN CART"
+// "name": "POST USERS"
+// "name": "POST USERS ADMIN"
+// "name": "GET LOGOUT"
+// "name": "GET TICKETS"
+// "name": "POST TICKETS"
